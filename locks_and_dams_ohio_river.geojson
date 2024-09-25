@@ -1,0 +1,233 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Emsworth Locks and Dam",
+        "location": "Pittsburgh, Pennsylvania",
+        "river_mile": 6.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.08892, 40.50427]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dashields Locks and Dam",
+        "location": "Coraopolis, Pennsylvania",
+        "river_mile": 13.3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.20592, 40.54892]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Montgomery Locks and Dam",
+        "location": "Monaca, Pennsylvania",
+        "river_mile": 31.7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.36575, 40.60368]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New Cumberland Locks and Dam",
+        "location": "Stratton, Ohio",
+        "river_mile": 54.3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.62763, 40.52768]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pike Island Locks and Dam",
+        "location": "Wheeling, West Virginia",
+        "river_mile": 84.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.70115, 40.16938]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hannibal Locks and Dam",
+        "location": "Hannibal, Ohio",
+        "river_mile": 126.4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-80.86534, 39.66706]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Willow Island Lock and Dam",
+        "location": "Newport, Ohio",
+        "river_mile": 161.7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.32041, 39.36048]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Belleville Lock and Dam",
+        "location": "Reedsville, Ohio",
+        "river_mile": 203.9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.74244, 39.11831]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Racine Lock and Dam",
+        "location": "Letart, West Virginia",
+        "river_mile": 237.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.91162, 38.91757]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Robert C. Byrd Lock and Dam",
+        "location": "Gallipolis Ferry, West Virginia",
+        "river_mile": 279.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-82.18897, 38.68156]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Greenup Lock and Dam",
+        "location": "Greenup, Kentucky",
+        "river_mile": 341
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-82.26077, 38.64864]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Captain Anthony Meldahl Locks and Dam",
+        "location": "Foster, Kentucky",
+        "river_mile": 436.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.17057, 38.7972]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Markland Locks and Dam",
+        "location": "Warsaw, Kentucky",
+        "river_mile": 531.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.94837, 38.77446]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "McAlpine Locks and Dam",
+        "location": "Louisville, Kentucky",
+        "river_mile": 606.8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-85.7813, 38.2828]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cannelton Locks and Dam",
+        "location": "Cannelton, Indiana",
+        "river_mile": 720.7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.7059, 37.89907]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Newburgh Lock and Dam",
+        "location": "Newburgh, Indiana",
+        "river_mile": 776.1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.3722, 37.9303]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "John T. Myers Locks and Dam",
+        "location": "Mt. Vernon, Indiana",
+        "river_mile": 846
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.399, 37.9573]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Smithland Lock and Dam",
+        "location": "Hamletsburg, Illinois",
+        "river_mile": 918.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-88.4309, 37.1656]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Olmsted Locks and Dam",
+        "location": "Olmsted, Illinois",
+        "river_mile": 964.4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-89.0635, 37.1838]
+      }
+    }
+  ]
+}

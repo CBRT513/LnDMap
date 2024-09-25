@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ohio River Locks and Dams</title>
+  <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    var map = new maplibre.Map({
+      container: 'map', // container ID
+      style: 'https://openfreemap.org/styles/positron/style.json', // OpenFreeMap style URL
+      center: [-84.5, 39.1], // Starting center (Ohio River region)
+      zoom: 6 // Zoom level
+    });
+
+    // Load the GeoJSON data from your GitHub repository
+    map.on('load', function () {
+      map.addSource('locksAndDams', {
+        'type': 'geojson',
+        'data': 'https://raw.githubusercontent.com/CBRT513/ohio-river-map/main/locks_and_dams_ohio_river.geojson' // Updated link with your username
+      });
+
+      // Add a layer to display the locks and dams
+      map.addLayer({
+        'id': 'locksAndDamsLayer',
+        'type': 'circle',
+        'source': 'locksAndDams',
+        'paint': {
+          'circle-radius': 6,
+          'circle-color': '#007cbf'
+        }
+      });
+
+      // Add popup on click
+      map.on('click', 'locksAndDamsLayer', function (e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var name = e.features[0].properties.name;
+        var location = e.features[0].properties.location;
+        var riverMile = e.features[0].properties.river_mile;
+
+        new maplibre.Popup()
+          .setLngLat(coordinates)
+          .setHTML('<strong>' + name + '</strong><br>' + location + '<br>Mile: ' + riverMile)
+          .addTo(map);
+      });
+
+      // Change the cursor to a pointer when hovering over the points
+      map.on('mouseenter', 'locksAndDamsLayer', function () {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+
+      // Reset the cursor when it leaves the points
+      map.on('mouseleave', 'locksAndDamsLayer', function () {
+        map.getCanvas().style.cursor = '';
+      });
+    });
+  </script>
+</body>
+</html>

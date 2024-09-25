@@ -18,8 +18,15 @@
   <!-- This div is where the map will appear -->
   <div id="map"></div>
 
-  <!-- JavaScript to create and display the map -->
+  <!-- JavaScript to check if MapLibre is loaded and to create and display the map -->
   <script>
+    // Test to see if MapLibre is loaded
+    if (typeof maplibre !== 'undefined') {
+      console.log('MapLibre is loaded!');
+    } else {
+      console.error('MapLibre is not loaded.');
+    }
+
     // Create a new map
     var map = new maplibre.Map({
       container: 'map', // ID of the container element (the div we created)

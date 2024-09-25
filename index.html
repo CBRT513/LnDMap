@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Script Loading Test</title>
-  <!-- Test by loading jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>MapLibre Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@2.1.9/dist/maplibre-gl.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@2.1.9/dist/maplibre-gl.css" rel="stylesheet" />
   <style>
     body { 
       margin: 0; 
@@ -19,15 +19,23 @@
   </style>
 </head>
 <body>
-  <h1>Script Test</h1>
+  <h1>MapLibre Test</h1>
   <div id="map"></div>
 
   <script>
-    // Test if jQuery is loaded
-    if (typeof $ !== 'undefined') {
-      console.log('jQuery is loaded!');
+    // Check if MapLibre is loaded
+    if (typeof maplibre !== 'undefined') {
+      console.log('MapLibre is loaded!');
+
+      // Initialize a basic MapLibre map
+      var map = new maplibre.Map({
+        container: 'map', // container ID
+        style: 'https://demotiles.maplibre.org/style.json', // demo style URL from MapLibre
+        center: [-84.5, 39.1], // starting position [lng, lat] (centered near Cincinnati)
+        zoom: 6 // starting zoom level
+      });
     } else {
-      console.log('jQuery is not loaded.');
+      console.error('MapLibre is not loaded.');
     }
   </script>
 </body>

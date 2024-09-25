@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MapLibre Test</title>
-  <!-- Use MapLibre 1.15.2 (earlier version) -->
-  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.css" rel="stylesheet" />
+  <title>Leaflet.js Test</title>
+  <!-- Load Leaflet.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <style>
-    body { 
-      margin: 0; 
-      padding: 0; 
-      font-family: Arial, sans-serif; 
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
     #map {
       width: 100%;
@@ -20,24 +20,17 @@
   </style>
 </head>
 <body>
-  <h1>MapLibre Test</h1>
+  <h1>Leaflet.js Test</h1>
   <div id="map"></div>
 
   <script>
-    // Check if MapLibre is loaded
-    if (typeof maplibre !== 'undefined') {
-      console.log('MapLibre is loaded!');
+    // Initialize a basic Leaflet map
+    var map = L.map('map').setView([39.1, -84.5], 6); // Centered near Cincinnati
 
-      // Initialize a basic MapLibre map
-      var map = new maplibre.Map({
-        container: 'map', // container ID
-        style: 'https://demotiles.maplibre.org/style.json', // demo style URL from MapLibre
-        center: [-84.5, 39.1], // starting position [lng, lat] (centered near Cincinnati)
-        zoom: 6 // starting zoom level
-      });
-    } else {
-      console.error('NachoLibre is not loaded.');
-    }
+    // Load and display OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
   </script>
 </body>
 </html>

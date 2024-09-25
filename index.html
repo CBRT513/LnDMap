@@ -17,17 +17,28 @@
     #container {
       margin: 50px;
     }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div id="container">
     <h1>Incremental Testing</h1>
-    <p>This is the first step in adding structure.</p>
+    <p>This is the next step, adding a button interaction.</p>
+    <button id="testButton">Click Me</button>
   </div>
 
   <script>
     // Simple JavaScript to confirm that scripts run properly
     console.log('JavaScript is working!');
+
+    // Add click event for button
+    document.getElementById('testButton').onclick = function() {
+      alert('Button clicked!');
+    };
   </script>
 </body>
 </html>

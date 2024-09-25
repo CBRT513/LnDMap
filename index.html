@@ -1,44 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Ohio River Locks and Dams</title>
+  
+  <!-- Load the MapLibre GL JS library -->
   <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
   <link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+  
+  <!-- Some basic styling to make the map fill the page -->
   <style>
     body { margin: 0; padding: 0; }
-    #map { width: 100%; height: 100vh; }
+    #map { width: 100%; height: 100vh; } /* This makes the map take the whole screen */
   </style>
 </head>
 <body>
+  <!-- This div is where the map will appear -->
   <div id="map"></div>
+
+  <!-- JavaScript to create and display the map -->
   <script>
+    // Create a new map
     var map = new maplibre.Map({
-      container: 'map', // container ID
-      style: 'https://openfreemap.org/styles/positron/style.json', // OpenFreeMap style URL
-      center: [-84.5, 39.1], // Starting center (Ohio River region)
-      zoom: 6 // Zoom level
+      container: 'map', // ID of the container element (the div we created)
+      style: 'https://openfreemap.org/styles/positron/style.json', // Map style URL from OpenFreeMap
+      center: [-84.5, 39.1], // Set the starting position of the map (near Cincinnati)
+      zoom: 6 // Initial zoom level of the map
     });
 
-    // Load the GeoJSON data from your GitHub repository
+    // Wait for the map to load
     map.on('load', function () {
+      // Add a GeoJSON source for the locks and dams data
       map.addSource('locksAndDams', {
         'type': 'geojson',
-        'data': 'https://raw.githubusercontent.com/CBRT513/ohio-river-map/main/locks_and_dams_ohio_river.geojson' // Updated link with your username
+        'data': 'https://raw.githubusercontent.com/CBRT513/LnDMap/main/locks_and_dams_ohio_river.geojson' // Link to your GeoJSON file in the GitHub repo
       });
 
-      // Add a layer to display the locks and dams
+      // Add a layer to display the points on the map (representing locks and dams)
       map.addLayer({
         'id': 'locksAndDamsLayer',
-        'type': 'circle',
-        'source': 'locksAndDams',
+        'type': 'circle', // Use circles to mark the points on the map
+        'source': 'locksAndDams', // Connect this layer to the GeoJSON source we added earlier
         'paint': {
-          'circle-radius': 6,
-          'circle-color': '#007cbf'
+          'circle-radius': 6, // Size of the circle marker
+          'circle-color': '#007cbf' // Color of the circle marker
         }
       });
 
-      // Add popup on click
+      // Add interactivity: Show a popup when a point is clicked
       map.on('click', 'locksAndDamsLayer', function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var name = e.features[0].properties.name;
@@ -51,12 +60,12 @@
           .addTo(map);
       });
 
-      // Change the cursor to a pointer when hovering over the points
+      // Change the cursor to a pointer when hovering over a point
       map.on('mouseenter', 'locksAndDamsLayer', function () {
         map.getCanvas().style.cursor = 'pointer';
       });
 
-      // Reset the cursor when it leaves the points
+      // Reset the cursor when it's no longer over a point
       map.on('mouseleave', 'locksAndDamsLayer', function () {
         map.getCanvas().style.cursor = '';
       });

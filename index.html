@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MapLibre Test</title>
-  <!-- Use MapTiler CDN for MapLibre -->
-  <script src="https://cdn.maptiler.com/maplibre-gl-js/v1.14.0/maplibre-gl.js"></script>
-  <link href="https://cdn.maptiler.com/maplibre-gl-js/v1.14.0/maplibre-gl.css" rel="stylesheet" />
+  <title>Script Loading Test</title>
+  <!-- Test by loading jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body { 
       margin: 0; 
@@ -20,22 +19,15 @@
   </style>
 </head>
 <body>
+  <h1>Script Test</h1>
   <div id="map"></div>
 
   <script>
-    // Check if MapLibre is loaded
-    console.log('MapLibre:', typeof maplibre !== 'undefined' ? 'Loaded' : 'Not loaded');
-
-    // If MapLibre is loaded, initialize the map
-    if (typeof maplibre !== 'undefined') {
-      var map = new maplibre.Map({
-        container: 'map', // ID of the container element (the div we created)
-        style: 'https://openfreemap.org/styles/positron/style.json', // Map style URL from OpenFreeMap
-        center: [-84.5, 39.1], // Starting position [lng, lat] (centered near Cincinnati)
-        zoom: 6 // Starting zoom level
-      });
+    // Test if jQuery is loaded
+    if (typeof $ !== 'undefined') {
+      console.log('jQuery is loaded!');
     } else {
-      console.error('MapLibre is not loaded.');
+      console.log('jQuery is not loaded.');
     }
   </script>
 </body>
